@@ -1,0 +1,19 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Favoritos</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+    <button ion-item *ngFor="let item of favoritos | async" (click)="toggleFavorito(item)">
+      <ion-icon *ngIf="!item.favorito" item-left name="star-outline"></ion-icon>
+      <ion-icon *ngIf="item.favorito" item-left name="star"></ion-icon>
+      <p>Código: {{item.codigo}}</p>
+      <p>Linguagem: {{item.linguagem}}</p>
+    </button>
+  </ion-list>
+</ion-content>

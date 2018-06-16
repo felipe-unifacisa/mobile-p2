@@ -1,0 +1,20 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Códigos</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <button ion-button block (click)="criarNovoCodigo()">Novo Código</button>
+  <ion-list>
+    <button ion-item *ngFor="let item of codigos | async" (click)="toggleFavorito(item)">
+      <ion-icon *ngIf="!item.favorito" item-left name="star-outline"></ion-icon>
+      <ion-icon *ngIf="item.favorito" item-left name="star"></ion-icon>
+      <p>Código: {{item.codigo}}</p>
+      <p>Linguagem: {{item.linguagem}}</p>
+    </button>
+  </ion-list>
+</ion-content>
